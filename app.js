@@ -30,14 +30,15 @@ function start() {
       ]
     }
   ]).then(response => {
-    if (response.type === "manager") {
-      createManager("manager");
-    } else if (response.type === "engineer") {
-      createEnigneer("engineer");
-    } else if (response.type === "intern") {
-      createIntern("intern");
+    if (response.type === "Manager") {
+      createManager("Manager");
+    } else if (response.type === "Engineer") {
+      createEngineer("Engineer");
+    } else if (response.type === "Intern") {
+      createIntern("Intern");
     } else {
       console.info("no more team members to add")
+      finish();
     }
   }
   )
@@ -60,7 +61,7 @@ function start() {
       },
       {
         type: "input",
-        name: "empId",
+        name: "id",
         message: "Enter employee ID: ",
         validate: answer => {
           if (answer !== "") {
@@ -84,7 +85,7 @@ function start() {
       },
       {
         type: "input",
-        name: "office",
+        name: "officeNumber",
         message: "Enter office number: ",
         validate: answer => {
           if (answer !== "") {
@@ -93,11 +94,12 @@ function start() {
             return "Please enter at least one character.";
           }
         }
-      }
+      },
     ]).then(response => {
-      const managerObj = new Manager(response.name, response.empId, response.email, response.office);
+      const managerObj = new Manager(response.name, response.id, response.email, response.officeNumber);
       teamMembers.push(managerObj);
-      createManager();
+      console.log(teamMembers);
+      start();
     });
   }
 
@@ -119,7 +121,7 @@ function start() {
       },
       {
         type: "input",
-        name: "empId",
+        name: "id",
         message: "Enter employee ID: ",
         validate: answer => {
           if (answer !== "") {
@@ -143,7 +145,7 @@ function start() {
       },
       {
         type: "input",
-        name: "github",
+        name: "gitUsername",
         message: "Enter Github username: ",
         validate: answer => {
           if (answer !== "") {
@@ -154,9 +156,9 @@ function start() {
         }
       }
     ]).then(response => {
-      const engineerObj = new Engineer(response.name, response.empId, response.email, response.github);
+      const engineerObj = new Engineer(response.name, response.id, response.email, response.gitUsername);
       teamMembers.push(engineerObj);
-      createEngineer();
+     start();
     });
   }
 
@@ -178,7 +180,7 @@ function start() {
       },
       {
         type: "input",
-        name: "empId",
+        name: "id",
         message: "Enter employee ID: ",
         validate: answer => {
           if (answer !== "") {
@@ -203,7 +205,7 @@ function start() {
       {
         type: "input",
         name: "school",
-        message: "Enter school name: "
+        message: "Enter school name: ",
         validate: answer => {
           if (answer !== "") {
             return true;
@@ -213,13 +215,23 @@ function start() {
         }
       }
     ]).then(response => {
-      const InternObj = new Intern(response.name, response.empId, response.email, response.school);
+      const internObj = new Intern(response.name, response.id, response.email, response.school);
       teamMembers.push(internObj);
-      createIntern();
+      console.log(teamMembers);
+      start();
     });
   }
 }
+
 start();
+
+
+function finish(){
+  const html = render(teamMembers);
+};
+
+
+//put the html mess here
 
 
 
