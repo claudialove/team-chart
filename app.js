@@ -223,12 +223,20 @@ function start() {
   }
 }
 
-start();
 
 
 function finish(){
   const html = render(teamMembers);
+  fs.writeFile("index.html", html, error => {
+    if (error) {
+      return console.log(Error)
+    } else {
+      return console.log("Success!")
+    }
+  } )
 };
+
+start();
 
 
 //put the html mess here
