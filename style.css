@@ -1,0 +1,75 @@
+body {
+    background-color: bisque;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: medium;
+}
+
+h3 {
+    font-size: medium;
+}
+#title {
+    background-color: pink;
+    padding: 20px;
+}
+
+#main-container {
+    width: 100%;
+}
+
+#first-card {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#second-card {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+#third-card {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+#fourth-card {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+
+#fifth-card {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.card-header {
+    background-color: pink;
+    padding: 10px;
+    width: 100%;
+}
+
+.card-body {
+    background-color: rgb(226, 223, 223);
+    padding: 10px;
+    width: 100%;
+}
+
+.list-group-item {
+    background-color: greenyellow;
+    padding: 10px;
+    width: 100%;
+}
+
+
+
