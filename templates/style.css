@@ -16,29 +16,15 @@ h3 {
     padding: 20px;
 }
 
-#main-container {
+.container {
     width: 100%;
 }
 
-#engineer-card {
+.card {
     padding: 10px;
     width: 100%;
     border: 1px solid black;
 }
-
-#intern-card {
-    padding: 10px;
-    width: 100%;
-    border: 1px solid black;
-}
-
-
-#manager-card {
-    padding: 10px;
-    width: 100%;
-    border: 1px solid black;
-}
-
 
 .card-header {
     background-color: pink;
